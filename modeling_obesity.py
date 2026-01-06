@@ -104,8 +104,8 @@ plt.show()
 
 """###Preparação dos dados"""
 
-X = df_obesity.drop("Obesity", axis=1)
-y = df_obesity["Obesity"]
+X = df.drop("Obesity", axis=1)
+y = df["Obesity"]
 
 num_cols = ["Age", "Height", "Weight", "FCVC", "NCP", "CH2O", "FAF", "TUE"]
 cat_cols = [col for col in X.columns if col not in num_cols]
@@ -145,5 +145,3 @@ print(classification_report(y_test, y_pred))
 """##Baixar em estilo .pkl"""
 
 joblib.dump(pipeline, "model.pkl")
-
-files.download("model.pkl")
